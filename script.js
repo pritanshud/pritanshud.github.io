@@ -51,6 +51,7 @@ const renderSkills = (filter = "all") => {
     const skillEl = document.createElement("div");
     skillEl.className =
       "skill-item card rounded-lg p-4 text-center font-semibold shadow-md hover:shadow-xl transform hover:scale-105";
+
     skillEl.textContent = skill.name;
     skillEl.dataset.category = skill.category;
     skillsGrid.appendChild(skillEl);
