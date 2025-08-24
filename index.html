@@ -1,38 +1,592 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pritanshu Dwivedi</title>
-    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="antialiased">
+    <header
+      id="header"
+      class="nav-bg fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    >
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="#home" class="text-2xl font-bold">Pritanshu Dwivedi</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a
+            href="#about"
+            class="nav-link hover:text-orange-500 transition-colors"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="nav-link hover:text-orange-500 transition-colors"
+            >Skills</a
+          >
+          <a
+            href="#experience"
+            class="nav-link hover:text-orange-500 transition-colors"
+            >Work Experience</a
+          >
+          <a
+            href="#certificates"
+            class="nav-link hover:text-orange-500 transition-colors"
+            >Awards & Certificates</a
+          >
+          <a
+            href="#travel"
+            class="nav-link hover:text-orange-500 transition-colors"
+            >Travel</a
+          >
+          <a
+            href="#blog"
+            class="nav-link hover:text-orange-500 transition-colors"
+            >Blog</a
+          >
+          <a
+            href="#contact"
+            class="nav-link hover:text-orange-500 transition-colors"
+            >Contact</a
+          >
+        </div>
+        <button
+          id="theme-toggle"
+          class="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+        >
+          <i data-lucide="sun" class="block dark:hidden"></i>
+          <i data-lucide="moon" class="hidden dark:block"></i>
+        </button>
+      </nav>
+    </header>
+
     <main>
-      <div class="hero">
-        <img
-          src="./assets/pritanshu-dwivedi.png"
-          alt="Pritanshu Dwivedi"
-          class="hero-img"
-        />
-        <div class="hero-text">
-          <h1>Pritanshu Dwivedi</h1>
-          <p class="subtitle">Software Engineer | Explorer</p>
-          <p>Welcome to my personal website!</p>
-          <p>
-            I am a Full-stack engineer with 4+ years of experience specializing
-            in CI/CD automation, frontend platform engineering, and developer
-            productivity. Proven track record of leading large-scale platform
-            initiatives, mentoring developers, and delivering measurable
-            improvements in deployment reliability and team efficiency.
-            Recognized with multiple awards for innovation, leadership, and
-            technical excellence.
+      <!-- Home Section -->
+      <section
+        id="home"
+        class="section container mx-auto px-6 flex flex-col md:flex-row items-center justify-center text-center md:text-left"
+      >
+        <div class="md:w-1/2 md:pr-10">
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
+            Hi, I'm Pritanshu Dwivedi
+          </h1>
+          <h2 class="text-2xl md:text-3xl mb-8">
+            A Passionate Full-Stack Developer
+          </h2>
+          <p class="mb-8 max-w-xl mx-auto md:mx-0">
+            I build beautiful and functional websites. I love turning complex
+            problems into simple, elegant solutions. Welcome to my digital
+            space!
+          </p>
+          <div class="flex justify-center md:justify-start space-x-4">
+            <a
+              href="./assets/Pritanshu_Dwivedi-Resume.pdf"
+              download
+              class="primary-btn py-3 px-6 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition-transform"
+              >Download Resume</a
+            >
+            <a
+              href="#contact"
+              class="secondary-btn border-2 py-3 px-6 rounded-lg font-semibold transform hover:scale-105 transition-transform"
+              >Contact Me</a
+            >
+          </div>
+        </div>
+        <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+          <div
+            class="w-64 h-64 md:w-96 md:h-96 flex items-center justify-center"
+          >
+              <img
+                src="./assets/pritanshu-dwivedi.png"
+                width="500"
+                height="500"
+              />
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">About Me</h2>
+        <div class="card rounded-xl p-8 md:p-12 max-w-4xl mx-auto shadow-lg">
+          <p class="text-lg mb-4">
+            Hello! I'm a full-stack developer with a passion for creating
+            intuitive and dynamic web experiences. My journey in tech started
+            with a simple "Hello, World!" and has since grown into a
+            full-fledged love for coding and problem-solving.
+          </p>
+          <p class="text-lg mb-4">
+            I have 4+ years of experience specializing in CI/CD automation,
+            frontend platform engineering, and developer productivity. Proven
+            track record of leading large-scale platform initiatives, mentoring
+            developers, and delivering measurable improvements in deployment
+            reliability and team efficiency. Recognized with multiple awards for
+            innovation, leadership, and technical excellence.
           </p>
         </div>
-      </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="section container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">My Skills</h2>
+        <div
+          class="flex justify-center flex-wrap gap-2 mb-8"
+          id="skills-filter"
+        >
+          <button
+            class="skill-tag active px-4 py-2 rounded-full cursor-pointer"
+            data-filter="all"
+          >
+            All
+          </button>
+          <button
+            class="skill-tag px-4 py-2 rounded-full cursor-pointer"
+            data-filter="language"
+          >
+            Programming Languages
+          </button>
+          <button
+            class="skill-tag px-4 py-2 rounded-full cursor-pointer"
+            data-filter="fe"
+          >
+            Frontend
+          </button>
+          <button
+            class="skill-tag px-4 py-2 rounded-full cursor-pointer"
+            data-filter="db"
+          >
+            Databases
+          </button>
+          <button
+            class="skill-tag px-4 py-2 rounded-full cursor-pointer"
+            data-filter="tools"
+          >
+            Tools & Platforms
+          </button>
+        </div>
+        <div
+          id="skills-grid"
+          class="grid grid-cols-6 md:grid-cols-8 lg:grid-cols-8 gap-6 max-w-6xl mx-auto"
+        ></div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="section container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">
+          Experience & Education
+        </h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold mb-6 text-center">Work Experience</h3>
+            <div class="card rounded-xl p-6 shadow-lg relative">
+              <div
+                class="absolute top-6 -left-3 w-6 h-6 bg-primary-light dark:bg-primary-dark rounded-full border-4 border-white dark:border-gray-800"
+              ></div>
+              <div class="pl-8">
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                  Oct 2020 - Present
+                </p>
+                <h4 class="text-xl font-bold mt-1">Associate</h4>
+                <p class="font-semibold mb-2">
+                  Cognizant Technology and Solutions, Bangalore
+                </p>
+                <ul class="list-disc ml-6 space-y-2">
+                  <li>
+                    Built and optimized CI/CD pipelines handling 1000+ builds
+                    per week, reducing build time and deployment failures by
+                    improving automation and security.
+                  </li>
+                  <li>
+                    Automated release processes, cutting manual effort by ~40%
+                    and improving deployment consistency.
+                  </li>
+                  <li>
+                    Led frontend platform enhancements: implemented major
+                    library upgrades, enforced ESLint/Stylelint rules, and
+                    launched a code quality dashboard improving code hygiene
+                    across 100+ teams.
+                  </li>
+                  <li>
+                    Designed and developed SneakyLint, a VS Code extension,
+                    improving detection of suppressed violations and boosting
+                    code quality.
+                  </li>
+                  <li>
+                    Delivered strategic initiatives including Vite dev server
+                    integration, Playwright test automation, and Storybook,
+                    directly enhancing developer experience.
+                  </li>
+                  <li>
+                    Supported microservices projects on cloud platforms,
+                    contributing to scalable and secure solutions.
+                  </li>
+                  <li>
+                    Improved monitoring by updating Splunk events and pipeline
+                    tracking, enabling better incident resolution.
+                  </li>
+                  <li>
+                    Mentored junior engineers, authored onboarding materials,
+                    and supported cross-team collaboration.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Education -->
+          <div>
+            <h3 class="text-2xl font-bold mb-6 text-center">Education</h3>
+            <div class="space-y-8">
+              <div class="card rounded-xl p-6 shadow-lg relative">
+                <div
+                  class="absolute top-6 -left-3 w-6 h-6 bg-primary-light dark:bg-primary-dark rounded-full border-4 border-white dark:border-gray-800"
+                ></div>
+                <div class="pl-8">
+                  <p class="text-sm text-gray-500 dark:text-gray-400">
+                    2016 - 2020
+                  </p>
+                  <h4 class="text-xl font-bold mt-1">
+                    Bachelor of Technology and Science
+                  </h4>
+                  <p class="font-semibold">Galgotias University,</p>
+                  <p class="font-semibold">Greater Noida, India</p>
+                </div>
+              </div>
+              <div class="card rounded-xl p-6 shadow-lg relative">
+                <div
+                  class="absolute top-6 -left-3 w-6 h-6 bg-primary-light dark:bg-primary-dark rounded-full border-4 border-white dark:border-gray-800"
+                ></div>
+                <div class="pl-8">
+                  <p class="text-sm text-gray-500 dark:text-gray-400">
+                    2015 - 2016
+                  </p>
+                  <h4 class="text-xl font-bold mt-1">High School</h4>
+                  <p class="font-semibold">Rani Laxmi Bai Memorial School,</p>
+                  <p class="font-semibold">Lucknow, India</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Certificates Section -->
+      <section id="certificates" class="section container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">
+          Awards & Certifications
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div class="card rounded-xl p-6 shadow-lg flex flex-col">
+            <h3 class="text-xl font-bold mb-2">
+              Designing & Implementing a Data Science Solution on Azure (2025)
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              Got the opportunity to learn how to operate machine learning
+              solutions at cloud scale using Azure Machine Learning
+            </p>
+          </div>
+          <div class="card rounded-xl p-6 shadow-lg flex flex-col">
+            <h3 class="text-xl font-bold mb-2">Azure Fundamental</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              Demonstrate foundational knowledge of cloud concepts, core Azure
+              services, plus Azure management and governance features and tools.
+            </p>
+          </div>
+          <div class="card rounded-xl p-6 shadow-lg flex flex-col">
+            <h3 class="text-xl font-bold mb-2">Xploration Day Winner - 2024</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              Participated in a company-wide Exploration Day, where employees
+              were encouraged to discover and present innovative ideas. Secured
+              first place by showcasing the use of Vite Test, which reduced unit
+              test execution time by up to 5x. This solution significantly
+              enhanced developer experience and lowered agent costs during
+              pipeline executions.
+            </p>
+            <!-- <a href="#" class="font-semibold text-primary-light dark:text-primary-dark mt-auto self-start">View Credential &rarr;</a> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Section -->
+      <section id="blog" class="section container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Latest Articles</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <a
+            href="https://medium.com/@pritanshudwivedi/a-guide-to-website-map-apis-ae544c9cb789"
+            class="card block rounded-xl p-6 shadow-lg transform hover:-translate-y-2 transition-transform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3 class="text-xl font-bold mb-2">A Guide to Website Map APIs</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              Your Guide to the embed maps in your websites.
+            </p>
+            <span
+              class="font-semibold text-primary-light dark:text-primary-dark"
+              >Read More &rarr;</span
+            >
+          </a>
+          <a
+            href="https://medium.com/@pritanshudwivedi/%EF%B8%8F-blue-green-deployment-as-an-airport-travel-experience-2b7ebe10b88e"
+            class="card block rounded-xl p-6 shadow-lg transform hover:-translate-y-2 transition-transform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3 class="text-xl font-bold mb-2">
+              Blue/Green Deployment as an Airport Travel Experience
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              How to deploy your application with no downtime.
+            </p>
+            <span
+              class="font-semibold text-primary-light dark:text-primary-dark"
+              >Read More &rarr;</span
+            >
+          </a>
+          <a
+            href="https://medium.com/@pritanshudwivedi/vitest-a-modern-alternative-to-jest-e4b321ccad57"
+            class="card block rounded-xl p-6 shadow-lg transform hover:-translate-y-2 transition-transform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3 class="text-xl font-bold mb-2">
+              Vitest: A Modern Alternative to Jest??
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              Exploring Vitest, and comparing it most used jest for unit
+              testing.
+            </p>
+            <span
+              class="font-semibold text-primary-light dark:text-primary-dark"
+              >Read More &rarr;</span
+            >
+          </a>
+          <a
+            href="https://medium.com/@pritanshudwivedi/prague-plans-eslint-scans-3c6200d9cdc5"
+            class="card block rounded-xl p-6 shadow-lg transform hover:-translate-y-2 transition-transform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3 class="text-xl font-bold mb-2">Prague Plans & ESLint Scans</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              Understand how ESlint can help in your project.
+            </p>
+            <span
+              class="font-semibold text-primary-light dark:text-primary-dark"
+              >Read More &rarr;</span
+            >
+          </a>
+          <a
+            href="https://medium.com/@pritanshudwivedi/testing-gateway-a-travel-inspired-guide-to-testing-a81da3e8b9ef"
+            class="card block rounded-xl p-6 shadow-lg transform hover:-translate-y-2 transition-transform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3 class="text-xl font-bold mb-2">
+              Testing Gateway: A Travel-Inspired Guide to Testing
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              Get to know different types of testing and when to implement which
+              one.
+            </p>
+            <span
+              class="font-semibold text-primary-light dark:text-primary-dark"
+              >Read More &rarr;</span
+            >
+          </a>
+          <a
+            href="https://medium.com/@pritanshudwivedi/the-europe-adventure-how-ngrx-signal-store-guides-your-group-7c3f5b82e5b9"
+            class="card block rounded-xl p-6 shadow-lg transform hover:-translate-y-2 transition-transform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3 class="text-xl font-bold mb-2">
+              The Europe Adventure: How NgRx Signal Store Guides Your Group
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              Explore NgRx Signal Store
+            </p>
+            <span
+              class="font-semibold text-primary-light dark:text-primary-dark"
+              >Read More &rarr;</span
+            >
+          </a>
+          <a
+            href="https://medium.com/@pritanshudwivedi/typescript-vs-javascript-strict-mode-a-tale-of-two-societies-358feceb48aa"
+            class="card block rounded-xl p-6 shadow-lg transform hover:-translate-y-2 transition-transform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3 class="text-xl font-bold mb-2">
+              TypeScript vs. JavaScript Strict Mode: A Tale of Two Societies
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              Leard key differences between TS & JS.
+            </p>
+            <span
+              class="font-semibold text-primary-light dark:text-primary-dark"
+              >Read More &rarr;</span
+            >
+          </a>
+          <a
+            href="https://medium.com/@pritanshudwivedi/angular-19-route-level-render-mode-b7ee6f0a4fe5"
+            class="card block rounded-xl p-6 shadow-lg transform hover:-translate-y-2 transition-transform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3 class="text-xl font-bold mb-2">
+              Vitest: A Modern Alternative to Jest??
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              Get to know Angular 19 new feature, route-level render mode.
+            </p>
+            <span
+              class="font-semibold text-primary-light dark:text-primary-dark"
+              >Read More &rarr;</span
+            >
+          </a>
+          <a
+            href="https://medium.com/@pritanshudwivedi/a-delightful-day-in-luxembourg-europes-hidden-gem-b25dd99b9d6e"
+            class="card block rounded-xl p-6 shadow-lg transform hover:-translate-y-2 transition-transform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3 class="text-xl font-bold mb-2">
+              A Delightful Day in Luxembourg: Europe’s Hidden Gem
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              Exploring Luxembourg through my eyes.
+            </p>
+            <span
+              class="font-semibold text-primary-light dark:text-primary-dark"
+              >Read More &rarr;</span
+            >
+          </a>
+        </div>
+      </section>
+
+      <!-- Travel Section -->
+      <section id="travel" class="section container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">My Travel Diary</h2>
+        <div class="card rounded-xl p-8 max-w-5xl mx-auto shadow-lg">
+          <p class="text-center mb-8">
+            I believe travel broadens the mind. Here are a few places I've been
+            fortunate to visit. Click on a marker to read my experience!
+          </p>
+          <div id="map"></div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Get In Touch</h2>
+        <div class="card rounded-xl p-4 max-w-2xl mx-auto shadow-lg">
+          <div class="text-center mb-8">
+            <div class="flex items-center justify-center mb-4">
+              <i
+                data-lucide="mail"
+                class="w-6 h-6 mr-3 text-primary-light dark:text-primary-dark"
+              ></i>
+              <a
+                href="mailto:pritanshu.dwivedi@gmail.com"
+                class="hover:underline"
+                >pritanshu.dwivedi@gmail.com</a
+              >
+            </div>
+            <div class="flex items-center justify-center">
+              <i
+                data-lucide="phone"
+                class="w-6 h-6 mr-3 text-primary-light dark:text-primary-dark"
+              ></i>
+              <span>+91-9554119334</span>
+            </div>
+          </div>
+        </div>
+        <div class="card rounded-xl p-8 max-w-2xl mx-auto shadow-lg">
+          <form id="contact-form">
+            <div class="mb-4">
+              <label for="name" class="block mb-2 font-semibold">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full p-3 rounded-lg bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                required
+              />
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block mb-2 font-semibold">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full p-3 rounded-lg bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                required
+              />
+            </div>
+            <div class="mb-6">
+              <label for="message" class="block mb-2 font-semibold"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                class="w-full p-3 rounded-lg bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="primary-btn w-full py-3 px-6 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition-transform"
+            >
+              Send Message
+            </button>
+          </form>
+          <p id="form-status" class="text-center mt-4 text-green-500"></p>
+        </div>
+      </section>
     </main>
+
+    <footer
+      class="mx-auto px-2 flex flex-col md:flex-row items-center justify-center text-center md:text-left"
+    >
+      <div class="container mx-auto px-6 text-center">
+        <div class="flex justify-center space-x-6 mb-4">
+          <a
+            href="https://github.com/pritanshud"
+            target="_blank"
+            class="hover:text-primary-light dark:hover:text-primary-dark transition-colors"
+            ><i data-lucide="github" class="w-8 h-8"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/pritanshu-dwivedi/"
+            target="_blank"
+            class="hover:text-primary-light dark:hover:text-primary-dark transition-colors"
+            ><i data-lucide="linkedin" class="w-8 h-8"></i
+          ></a>
+        </div>
+        <p>&copy; 2025 Pritanshu Dwivedi. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script rel="script" src="./script.js"></script>
   </body>
 </html>
